@@ -1,0 +1,308 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+:root {
+  /* ## Colors
+    /* (active input border) */
+  --linear-gradient: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  /* (input errors) */
+  --red: hsl(0, 100%, 66%);
+  /* ### Neutral */
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+body {
+  color: var(--very-dark-violet);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+span {
+  color: var(--white);
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  position: absolute;
+}
+
+input {
+  box-sizing: border-box;
+  border: solid 0.1rem var(--light-grayish-violet);
+  border-radius: 0.8rem;
+  color: var(--very-dark-violet);
+  font-family: inherit;
+  margin: 1rem 0 2.2rem;
+  outline: none;
+  padding: 1.3rem 1.5rem;
+  width: 100%;
+}
+
+input:focus {
+  background-image: linear-gradient(var(--white), var(--white)),
+    var(--linear-gradient);
+  background-clip: padding-box, border-box;
+  border: 0.1rem solid transparent;
+}
+
+input.active:invalid {
+  border: 0.1rem solid var(--red);
+}
+
+.bg {
+  background-image: url("../images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 24rem;
+  height: 36vh;
+}
+
+.wrapper-back {
+  width: 28.5rem;
+  margin: auto;
+  position: relative;
+  top: 13%;
+  top: 10vw;
+  left: 7%;
+}
+
+.card-back {
+  width: 100%;
+  background-color: transparent;
+  box-shadow: -1rem 1rem 0.8rem hsla(0, 0%, 0%, 0.1);
+  border-radius: 1rem;
+}
+
+.wrapper-front {
+  width: 28.5rem;
+  margin: auto;
+  position: relative;
+  top: -3.5rem;
+  right: 8%;
+}
+
+.card-front {
+  width: 100%;
+  background-color: transparent;
+  box-shadow: -1rem 1rem 0.8rem hsla(0, 0%, 0%, 0.1);
+  border-radius: 1rem;
+}
+
+.logo {
+  position: absolute;
+  top: 1.7rem;
+  left: 2rem;
+  width: 19%;
+}
+
+.cvc {
+  top: 7rem;
+  right: 3.5rem;
+}
+
+.number {
+  top: 8.5rem;
+  left: 2rem;
+  font-size: 1.8rem;
+  letter-spacing: 0.2rem;
+}
+
+.name {
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.date {
+  bottom: 2rem;
+  right: 2rem;
+}
+
+.date-cvc-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.date-inputs {
+  display: flex;
+  gap: 1rem;
+}
+
+.wrapper-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 65vh;
+}
+
+.form {
+  margin: 9rem 2.5rem 4.5rem;
+  box-sizing: border-box;
+  max-width: 32.5rem;
+}
+
+::placeholder {
+  color: var(--dark-grayish-violet);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.btn {
+  background-color: var(--very-dark-violet);
+  background-image: var(--linear-gradient);
+  background-position: -40rem;
+  background-repeat: no-repeat;
+  border-radius: 0.8rem;
+  color: var(--white);
+  font-size: 1.8rem;
+  padding: 1.5rem;
+  margin-top: 0.5rem;
+  transition: background-position .2s ease-in-out;
+  width: 100%; 
+}
+
+.btn:hover {
+  background-position: unset;
+}
+
+/* === SUCCESS PAGE === */
+.success {
+  letter-spacing: initial;
+  text-transform: initial;
+  text-align: center;
+  width: 35rem;
+}
+
+.icon-complete {
+  width: 7rem;
+}
+
+.heading {
+  font-size: 2.5rem;
+  margin: 3.5rem 0 2.5rem;
+}
+
+.paragraph {
+  color: var(--dark-grayish-violet);
+  font-size: 1.6rem;
+}
+
+.btn-success {
+  font-size: 1.6rem;
+  margin-top: 4.5rem;
+}
+
+
+/* === DESKTOP SIZE === */
+@media (min-width: 1300px) {
+  main {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+  }
+
+  span {
+    font-size: 1.4rem;
+    letter-spacing: 0.22rem;
+  }
+
+  input {
+    margin-bottom: 2.8rem;
+  }
+
+
+  .bg {
+    background-image: url("../images/bg-main-desktop.png");
+    min-height: 100vh;
+  }
+
+  .wrapper-front {
+    width: 44.5rem;
+    top: -6%;
+    left: 30%;
+  }
+
+  .card-front {
+    background-color: transparent;
+    box-shadow: -2.5rem 2.5rem 1.5rem hsla(0, 0%, 0%, 0.1);
+    border-radius: 1rem;
+  }
+
+  .wrapper-back {
+    width: 44.5rem;
+    top: 52%;
+    left: 50%;
+  }
+
+  .card-back {
+    background-color: transparent;
+    box-shadow: -2.5rem 2.5rem 1.5rem hsla(0, 0%, 0%, 0.1);
+    border-radius: 1rem;
+  }
+
+  .form {
+    max-width: 38rem;
+    margin: 0 0 0 12rem;
+  }
+
+  .date-cvc-box {
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 2rem;
+  }
+
+  .btn {
+    margin-top: 1rem;
+  }
+
+  .logo {
+    top: 3rem;
+    left: 3rem;
+    width: 19%;
+  }
+
+  .number {
+    top: 14.5rem;
+    left: 3rem;
+    font-size: 2.7rem;
+    letter-spacing: 0.4rem;
+  }
+
+  .name {
+    bottom: 3rem;
+    left: 3rem;
+  }
+
+  .date {
+    bottom: 3rem;
+    right: 3rem;
+  }
+
+  .cvc {
+    top: 11.2rem;
+    right: 5.5rem;
+  }
+
+  /* === SUCCESS PAGE === */
+  .btn-success {
+    margin-top: 4.5rem;
+  }
+}
+
+
+/* === TABLET SIZE === */
+@media (min-width: 768px) and (max-width: 1299px) {
+  .wrapper-front {
+    top: 3vw;
+  }
+  
+  .wrapper-form {
+    min-height: unset;
+  }
+
+  .form {
+    margin-top: 20rem;
+  }
+}

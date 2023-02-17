@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Interactive card details form | Frontend Mentor</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+
+<body>
+
+  <main>
+    <section class="bg" aria-hidden="true">
+      <div class="wrapper-back">
+        <img class="card-back" src="images/bg-card-back.png" alt="">
+        <span id="imgCvc" class="cvc">000</span>
+      </div>
+
+      <div class="wrapper-front">
+        <img class="card card-front" src="images/bg-card-front.png" alt="">
+        <img class="logo" src="images/card-logo.svg" alt="">
+        <span id="imgNumber" class="number">0000 0000 0000 0000</span>
+        <span id="imgName" class="name">Jane Appleseed</span>
+        <span id="imgDate" class="date">00/00</span>
+      </div>
+    </section>
+
+    <section class="wrapper-form">
+      <div class="form success">
+        <img class="icon-complete" src="images/icon-complete.svg" alt="" aria-hidden="true">
+        <h1 class="heading">Thank you!</h1>
+        <p class="paragraph">We've added your card details</p>
+        <button class="btn btn-success">Continue</button>
+      </div>
+  </main>
+
+  <script>
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+  
+    document.getElementById("imgName").textContent = params.cardholderName;
+    document.getElementById("imgNumber").textContent = params.cardNumber;
+    document.getElementById("imgDate").textContent = params.month + "/" + params.year;
+    document.getElementById("imgCvc").textContent = params.cvc;
+
+    document.querySelector("button").onclick = () => window.location.replace("/");
+  </script>
+
+</body>
+</html>

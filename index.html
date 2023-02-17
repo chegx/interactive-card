@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Interactive card details form | Frontend Mentor</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+
+<body>
+
+  <main>
+    <section class="bg" aria-hidden="true">
+      <div class="wrapper-back">
+        <img class="card-back" src="images/bg-card-back.png" alt="">
+        <span id="imgCvc" class="cvc">000</span>
+      </div>
+
+      <div class="wrapper-front">
+        <img class="card card-front" src="images/bg-card-front.png" alt="">
+        <img class="logo" src="images/card-logo.svg" alt="">
+        <span id="imgNumber" class="number">0000 0000 0000 0000</span>
+        <span id="imgName" class="name">Jane Appleseed</span>
+        <span id="imgDate" class="date">00/00</span>
+      </div>
+    </section>
+
+    <section class="wrapper-form">
+      <form class="form" action="success.html" method="get" autocomplete="off">
+        <label for="cardholderName">Cardholder Name</label>
+        <input type="text" name="cardholderName" id="cardholderName" maxlength="30" placeholder="e.g. Jane Appleseed" required>
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" pattern="^[\d ]{19}$" minlength="19" maxlength="19" name="cardNumber" placeholder="e.g. 1234 5678 9123 0000" required>
+        <div class="date-cvc-box">
+          <div class="date-box">
+            <label>Exp. Date (MM/YY)</label>
+            <label for="month" aria-label="month"></label>
+            <label for="year" aria-label="year"></label>
+            <div class="date-inputs">
+              <input type="text" id="month" pattern="0[1-9]|1[0-2]" minlength="2" maxlength="2" name="month" placeholder="MM" required>
+              <input type="text" id="year" pattern="\d*" minlength="2" maxlength="2" name="year" placeholder="YY" required>
+            </div>
+          </div>
+          <div class="cvc-box">
+            <label for="cvc">CVC</label>
+            <input type="text" id="cvc" pattern="\d*" minlength="3" maxlength="3" name="cvc" placeholder="e.g. 123" required>
+          </div>
+        </div>
+        <button class="btn" type="submit">Confirm</button>
+      </form>
+    </section>
+  </main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
